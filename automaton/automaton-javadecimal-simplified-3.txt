@@ -1,0 +1,19 @@
+digraph g {
+	rankdir = "LR";
+	node [shape = "circle"];
+	f [shape="doublecircle"];
+	NZ [shape="doublecircle"];
+	EndWithDigit [shape="doublecircle"];
+	initial [shape="point"];
+
+	initial -> D
+	D -> f [label="0"]
+	D -> NZ [label="NonZeroDigit"]
+	NZ -> EndWithDigit [label="Digit"]
+	NZ -> EndWithUnderscore [label="Underscore"]
+
+	EndWithDigit -> EndWithDigit [label="Digit"]
+	EndWithDigit -> EndWithUnderscore [label="Underscore"]
+	EndWithUnderscore -> EndWithUnderscore [label="Underscore"]
+	EndWithUnderscore -> EndWithDigit [label="Digit"]
+}
