@@ -6,6 +6,7 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.tree.Trees;
 
 import jp.naist.se.parser.Java9Parser.CompilationUnitContext;
 
@@ -23,6 +24,9 @@ public class JavaParseExample {
 				// Run a parser
 				Java9Parser parser = new Java9Parser(tokens);
 				CompilationUnitContext c = parser.compilationUnit();
+				
+				// You can print the AST structure using S-expression format
+				// System.out.println(Trees.toStringTree(c, parser));
 
 				// TODO 4. Count the number of declared methods in a given file.  
 				MethodCountVisitor v = new MethodCountVisitor();
