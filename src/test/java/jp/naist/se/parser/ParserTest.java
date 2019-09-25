@@ -1,15 +1,24 @@
 package jp.naist.se.parser;
 
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Assert;
 import org.junit.Test;
+
+import jp.naist.se.parser.Java9Parser.LiteralContext;
 
 
 public class ParserTest {
 
 	public boolean isLiteral(String text) {
 		// TODO 8. Write a method to test a string is a Java literal or not.
-		//CharStream stream = CharStreams.fromString(text);
-		return false;
+		CharStream stream = CharStreams.fromString(text);
+		Java9Lexer lexer = new Java9Lexer(stream);
+		CommonTokenStream tokens = new CommonTokenStream(lexer);
+		Java9Parser parser = new Java9Parser(tokens);
+		LiteralContext c = parser.literal();
+		return tokens.size() > 1 && c.exception == null && c.getText().equals(text);
 	}
 	
 	@Test

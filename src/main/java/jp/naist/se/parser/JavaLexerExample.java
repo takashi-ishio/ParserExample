@@ -28,8 +28,24 @@ public class JavaLexerExample {
 				tokens.fill(); 
 				
 				// TODO 2. Print token attributes!
+//				for (int i=0; i<tokens.size(); i++) {
+//					System.out.println(tokens.get(i).getText());
+//				}
 				
 				// TODO 3. Print "normalized" source code hiding identifier names
+				for (int i=0; i<tokens.size(); i++) {
+					Token t = tokens.get(i);
+					if (t.getType() == Java9Lexer.Identifier) {
+						System.out.print("_");
+					} else {
+						System.out.print(t.getText());
+					}
+					System.out.print(" ");
+					if (i < tokens.size() - 1 && t.getLine() < tokens.get(i+1).getLine()) {
+						System.out.println();
+					}
+				}
+				System.out.println();
 
 			}
 

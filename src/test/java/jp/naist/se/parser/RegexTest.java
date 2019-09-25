@@ -7,7 +7,7 @@ public class RegexTest {
 
 	public static boolean isDecimalLiteral(String text) {
 		// TODO 1. Write a regular expression that matches a decimal number literal.
-		return text.matches("Write a correct regular expression here!");
+		return text.matches("0|[1-9]([0-9_]*[0-9])?");
 	}
 	
 	@Test
