@@ -8,15 +8,15 @@ digraph g {
 	initial [shape="point"];
 
 	initial -> D
-	D -> f [label="0"]
-	D -> NZ [label="NonZeroDigit"]
-	NZ -> Digits [label="Digit"]
-	NZ -> Underscores [label="Underscore"]
-	Underscores -> Underscores [label="Underscore"]
-	Underscores -> Digits [label="Digit"]
+	D -> f [label="'0'"]
+	D -> NZ [label="[1-9]"]
+	NZ -> Digits [label="[0-9]"]
+	NZ -> Underscores [label="'_'"]
+	Underscores -> Underscores [label="'_'"]
+	Underscores -> Digits [label="[0-9]"]
 
-	Digits -> End [label="Digit"]
-	Digits -> DigitsAndUnderscores [label="DigitOrUnderscore"]
-	DigitsAndUnderscores -> DigitsAndUnderscores [label="DigitOrUnderscore"]
-	DigitsAndUnderscores -> End [label="Digit"]
+	Digits -> End [label="[0-9]"]
+	Digits -> DigitsAndUnderscores [label="[0-9_]"]
+	DigitsAndUnderscores -> DigitsAndUnderscores [label="[0-9_]"]
+	DigitsAndUnderscores -> End [label="[0-9]"]
 }
