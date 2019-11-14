@@ -3,7 +3,7 @@
 This program is partially implemented for an exercise to learn source code parsing.
 Clone and import to your development environment (e.g. Eclipse).
 
-Lecture Material (in Japanese) is included in this repository: <https://github.com/takashi-ishio/ParserExample/blob/master/Parsing20190923.pdf>
+Lecture Material (in Japanese) is available at <https://www.slideshare.net/TakashiIshio/ver101-193313140>
 
 This branch includes some TODOs for your practice.
 A complete example is included in the `implemented` branch.
